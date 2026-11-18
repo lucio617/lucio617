@@ -33,7 +33,15 @@ For GitHub Actions, **no token setup is necessary**: the default workflow token 
 ### Tests
 
 ```bash
-node --test tests/heatmap.test.mjs
+node --test tests/*.test.mjs
 ```
 
 The initial SVG is an explicitly labeled placeholder until the first successful workflow run. If the workflow cannot read the public contribution calendars, it exits with an error and does not overwrite the most recently generated SVG.
+
+## Combined contribution snake
+
+[`generate-snake.mjs`](./generate-snake.mjs) uses the same public-calendar fetch and date aggregation as the heatmap. Its dependency-free SVG renderer places each day's **summed** count on the calendar, then animates a purple snake through every square. Colored cells disappear when the snake reaches them, and the calendar resets each loop. Both light and dark themes are supported; reduced-motion preferences display the complete static calendar.
+
+The existing **Generate snake animation** workflow now generates activity for both accounts every 12 hours (00:20 and 12:20 UTC), on relevant pushes to `main`, or manually. It runs all tests before publishing `snake.svg` to the existing `output` branch with a normal commit. It preserves other output files and does not force-push or rewrite history. Only the default ephemeral `GITHUB_TOKEN` is required.
+
+For local generation, provide a temporary `GITHUB_TOKEN` and run `node scripts/generate-snake.mjs`. The SVG is written to `dist/snake.svg`. The root-level `snake.yml` is an inactive legacy copy; GitHub runs `.github/workflows/snake.yml`.

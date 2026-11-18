@@ -1,31 +1,59 @@
 name: Generate snake animation
 
 on:
-  schedule: # execute every 12 hours
-    - cron: "* */12 * * *"
-
+  schedule:
+    - cron: '20 */12 * * *'
   workflow_dispatch:
-
   push:
-    branches:
-    - master
+    branches: [main]
+    paths:
+      - '.github/workflows/snake.yml'
+      - 'scripts/generate-snake.mjs'
+      - 'scripts/generate-heatmap.mjs'
+      - 'tests/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: combined-contribution-snake
+  cancel-in-progress: false
 
 jobs:
   generate:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 5
     steps:
-      - name: generate snake.svg
-        uses: Platane/snk/svg-only@v2
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: dist/snake.svg
+      - name: Check out profile repository
+        uses: actions/checkout@v4
 
-
-      - name: push snake.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v2.6.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          target_branch: output
-          build_dir: dist
+          node-version: '22'
+
+      - name: Test contribution generators
+        run: node --test tests/*.test.mjs
+
+      - name: Generate combined contribution snake
         env:
-          GITHUB_TOKEN: ${{ secrets.YOUR_SECRET_NAME }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/generate-snake.mjs
+
+      - name: Check out existing output branch
+        uses: actions/checkout@v4
+        with:
+          ref: output
+          path: snake-output
+
+      - name: Publish snake without rewriting output history
+        run: |
+          cp dist/snake.svg snake-output/snake.svg
+          cd snake-output
+          git add snake.svg
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore: refresh combined contribution snake'
+            git push origin HEAD:output
+          fi

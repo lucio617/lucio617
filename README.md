@@ -78,10 +78,10 @@
 
 ### 🔥 A little GitHub fun
 
-**The original contribution snake** 🐍 *(shows personal account activity only)*
+**The combined contribution snake** 🐍 *(public activity from @lucio617 + @tiwari-nishant)*
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/lucio617/lucio617/output/snake.svg" alt="Personal GitHub contribution snake animation" />
+  <img src="https://raw.githubusercontent.com/lucio617/lucio617/output/snake.svg" alt="Combined GitHub contribution snake animation for lucio617 and tiwari-nishant" />
 </div>
 
 <div align="center">
