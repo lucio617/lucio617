@@ -1,0 +1,46 @@
+name: Update combined contribution heatmap
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '20 2 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/generate-heatmap.mjs'
+      - '.github/workflows/update-combined-contributions.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-heatmap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Test heatmap generator
+        run: node --test tests/heatmap.test.mjs
+
+      - name: Generate public combined heatmap
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node scripts/generate-heatmap.mjs
+
+      - name: Commit updated SVG if necessary
+        run: |
+          git add assets/combined-heatmap.svg
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'chore: refresh combined public contribution heatmap'
+            git push
+          fi
