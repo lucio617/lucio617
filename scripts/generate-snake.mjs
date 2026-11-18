@@ -58,7 +58,7 @@ export function renderSnake(summary) {
   const duration = startPause + route.length * stepSeconds + 2;
   const percent = seconds => (seconds / duration * 100).toFixed(5);
   const pointAt = index => route[(index + route.length) % route.length];
-  const transform = point => `transform:translate(${48 + point.x * 16}px,${80 + point.y * 16}px)`;
+  const transform = point => `transform:translate(${48 + point.x * 16}px,${48 + point.y * 16}px)`;
   const animations = [];
 
   const squares = cells.map(day => {
@@ -69,7 +69,7 @@ export function renderSnake(summary) {
       animations.push(`@keyframes eat${visit}{0%,${percent(eatenAt - 0.001)}%{fill:var(--l${contributionLevel})}${percent(eatenAt)}%,100%{fill:var(--empty)}}`);
     }
     const animation = contributionLevel ? `animation:eat${visit} ${duration}s linear infinite;` : '';
-    return `<rect class="day" data-date="${day.date}" x="${48 + day.x * 16}" y="${80 + day.y * 16}" width="12" height="12" rx="2" style="fill:var(--${contributionLevel ? `l${contributionLevel}` : 'empty'});${animation}"><title>${day.date}: ${day.total} contributions (${day.personal} personal, ${day.openSource} open-source)</title></rect>`;
+    return `<rect class="day" data-date="${day.date}" x="${48 + day.x * 16}" y="${48 + day.y * 16}" width="14" height="14" rx="2" style="fill:var(--${contributionLevel ? `l${contributionLevel}` : 'empty'});${animation}"><title>${day.date}: ${day.total} contributions (${day.personal} personal, ${day.openSource} open-source)</title></rect>`;
   }).join('\n  ');
 
   const segments = Array.from({ length: SNAKE_LENGTH }, (_, index) => {
@@ -79,10 +79,10 @@ export function renderSnake(summary) {
     }
     frames.push(`100%{${transform(pointAt(-index))}}`);
     animations.push(`@keyframes snake${index}{${frames.join('')}}`);
-    return `<rect class="snake" width="12" height="12" rx="4" style="${transform(pointAt(-index))};opacity:${1 - index * 0.09};animation:snake${index} ${duration}s linear infinite"/>`;
+    return `<rect class="snake" width="14" height="14" rx="4" style="${transform(pointAt(-index))};opacity:${1 - index * 0.09};animation:snake${index} ${duration}s linear infinite"/>`;
   }).reverse().join('\n  ');
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="snake-title snake-description" viewBox="0 0 ${width * 16 + 96} 240">
+  return `<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="snake-title snake-description" width="${width * 16 + 72}" height="208" viewBox="0 0 ${width * 16 + 72} 208">
   <title id="snake-title">Combined contribution snake: @lucio617 + @tiwari-nishant</title>
   <desc id="snake-description">${total} public GitHub contributions (${personalTotal} personal + ${openSourceTotal} open-source) from ${cells[0].date} to ${cells.at(-1).date}. The snake eats the combined calendar and loops. Gerrit-only and private activity are excluded.</desc>
   <style>
@@ -94,14 +94,13 @@ export function renderSnake(summary) {
     ${animations.join('\n    ')}
     @media(prefers-reduced-motion:reduce){.day{animation:none!important}.snake{display:none}}
   </style>
-  <text x="48" y="24" font-size="17" font-weight="700">One snake. Two GitHub accounts.</text>
-  <text x="48" y="46" font-size="12">${total} contributions · @lucio617 (${personalTotal}) + @tiwari-nishant (${openSourceTotal})</text>
-  <text x="17" y="106" font-size="10">Mon</text>
-  <text x="17" y="138" font-size="10">Wed</text>
-  <text x="17" y="170" font-size="10">Fri</text>
+  <text x="48" y="22" font-size="12">${total} contributions · @lucio617 (${personalTotal}) + @tiwari-nishant (${openSourceTotal})</text>
+  <text x="10" y="75" font-size="10">Mon</text>
+  <text x="10" y="107" font-size="10">Wed</text>
+  <text x="10" y="139" font-size="10">Fri</text>
   ${squares}
   ${segments}
-  <text x="48" y="226" font-size="11">Combined public activity · ${cells[0].date} – ${cells.at(-1).date} UTC · refreshes every 12 hours</text>
+  <text x="48" y="194" font-size="11">Combined public activity · ${cells[0].date} – ${cells.at(-1).date} UTC · refreshes every 12 hours</text>
 </svg>\n`;
 }
 

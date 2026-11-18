@@ -78,10 +78,10 @@
 
 ### 🔥 A little GitHub fun
 
-**The combined contribution snake** 🐍 *(public activity from @lucio617 + @tiwari-nishant)*
+A snake eating my contributions 😲
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/lucio617/lucio617/output/snake.svg" alt="Combined GitHub contribution snake animation for lucio617 and tiwari-nishant" />
+  <img src="https://raw.githubusercontent.com/lucio617/lucio617/output/snake.svg" width="100%" alt="Combined GitHub contribution snake animation for lucio617 and tiwari-nishant" />
 </div>
 
 <div align="center">
