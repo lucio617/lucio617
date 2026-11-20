@@ -37,8 +37,7 @@
   <text x="43" y="207" fill="#7990af" font-size="10" font-family="Arial, sans-serif">Mon</text>
   <text x="43" y="239" fill="#7990af" font-size="10" font-family="Arial, sans-serif">Wed</text>
   <text x="43" y="271" fill="#7990af" font-size="10" font-family="Arial, sans-serif">Fri</text>
-  <rect x="72" y="245" width="12" height="12" rx="3" fill="#253349"><title>2025-11-20: 0 contributions (0 personal, 0 open-source)</title></rect>
-    <rect x="72" y="261" width="12" height="12" rx="3" fill="#253349"><title>2025-11-21: 0 contributions (0 personal, 0 open-source)</title></rect>
+  <rect x="72" y="261" width="12" height="12" rx="3" fill="#253349"><title>2025-11-21: 0 contributions (0 personal, 0 open-source)</title></rect>
     <rect x="72" y="277" width="12" height="12" rx="3" fill="#253349"><title>2025-11-22: 0 contributions (0 personal, 0 open-source)</title></rect>
     <rect x="88" y="181" width="12" height="12" rx="3" fill="#253349"><title>2025-11-23: 0 contributions (0 personal, 0 open-source)</title></rect>
     <rect x="88" y="197" width="12" height="12" rx="3" fill="#253349"><title>2025-11-24: 0 contributions (0 personal, 0 open-source)</title></rect>
@@ -402,7 +401,8 @@
     <rect x="904" y="213" width="12" height="12" rx="3" fill="#087c91"><title>2026-11-17: 4 contributions (4 personal, 0 open-source)</title></rect>
     <rect x="904" y="229" width="12" height="12" rx="3" fill="#145668"><title>2026-11-18: 2 contributions (2 personal, 0 open-source)</title></rect>
     <rect x="904" y="245" width="12" height="12" rx="3" fill="#145668"><title>2026-11-19: 1 contributions (1 personal, 0 open-source)</title></rect>
-  <text x="37" y="310" fill="#8fa4c1" font-size="11" font-family="Arial, sans-serif">Updated 2026-11-19 UTC · GitHub-reported activity, not Gerrit-only changes</text>
+    <rect x="904" y="261" width="12" height="12" rx="3" fill="#253349"><title>2026-11-20: 0 contributions (0 personal, 0 open-source)</title></rect>
+  <text x="37" y="310" fill="#8fa4c1" font-size="11" font-family="Arial, sans-serif">Updated 2026-11-20 UTC · GitHub-reported activity, not Gerrit-only changes</text>
   <text x="848" y="310" fill="#8fa4c1" font-size="10" font-family="Arial, sans-serif">Less</text>
   <rect x="878" y="300" width="12" height="12" rx="3" fill="#253349"/><rect x="895" y="300" width="12" height="12" rx="3" fill="#145668"/><rect x="912" y="300" width="12" height="12" rx="3" fill="#087c91"/><rect x="929" y="300" width="12" height="12" rx="3" fill="#0aa8af"/><rect x="946" y="300" width="12" height="12" rx="3" fill="#27c9be"/><rect x="963" y="300" width="12" height="12" rx="3" fill="#8af5cd"/>
   <text x="990" y="327" fill="#8fa4c1" font-size="10" font-family="Arial, sans-serif">More</text>
