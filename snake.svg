@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="snake-title snake-description" width="920" height="208" viewBox="0 0 920 208">
   <title id="snake-title">Combined contribution snake: @lucio617 + @tiwari-nishant</title>
-  <desc id="snake-description">309 public GitHub contributions (131 personal + 178 open-source) from 2025-11-24 to 2026-11-23. The snake eats the combined calendar and loops. Gerrit-only and private activity are excluded.</desc>
+  <desc id="snake-description">309 public GitHub contributions (131 personal + 178 open-source) from 2025-11-25 to 2026-11-24. The snake eats the combined calendar and loops. Gerrit-only and private activity are excluded.</desc>
   <style>
     svg{--empty:#ebedf0;--border:#d1d9e0;--ink:#57606a;--snake:#8250df;--l1:#9be9a8;--l2:#40c463;--l3:#30a14e;--l4:#216e39}
     text{fill:var(--ink);font-family:Arial,sans-serif}
@@ -146,7 +146,6 @@
   <text x="10" y="75" font-size="10">Mon</text>
   <text x="10" y="107" font-size="10">Wed</text>
   <text x="10" y="139" font-size="10">Fri</text>
-  <rect class="day" data-date="2025-11-24" x="48" y="64" width="14" height="14" rx="2" style="fill:var(--empty);"><title>2025-11-24: 0 contributions (0 personal, 0 open-source)</title></rect>
   <rect class="day" data-date="2025-11-25" x="48" y="80" width="14" height="14" rx="2" style="fill:var(--empty);"><title>2025-11-25: 0 contributions (0 personal, 0 open-source)</title></rect>
   <rect class="day" data-date="2025-11-26" x="48" y="96" width="14" height="14" rx="2" style="fill:var(--l1);animation:eat4 34.24s linear infinite;"><title>2025-11-26: 2 contributions (0 personal, 2 open-source)</title></rect>
   <rect class="day" data-date="2025-11-27" x="48" y="112" width="14" height="14" rx="2" style="fill:var(--l1);animation:eat5 34.24s linear infinite;"><title>2025-11-27: 1 contributions (0 personal, 1 open-source)</title></rect>
@@ -511,10 +510,11 @@
   <rect class="day" data-date="2026-11-21" x="864" y="144" width="14" height="14" rx="2" style="fill:var(--l2);animation:eat358 34.24s linear infinite;"><title>2026-11-21: 4 contributions (4 personal, 0 open-source)</title></rect>
   <rect class="day" data-date="2026-11-22" x="880" y="48" width="14" height="14" rx="2" style="fill:var(--empty);"><title>2026-11-22: 0 contributions (0 personal, 0 open-source)</title></rect>
   <rect class="day" data-date="2026-11-23" x="880" y="64" width="14" height="14" rx="2" style="fill:var(--l1);animation:eat366 34.24s linear infinite;"><title>2026-11-23: 1 contributions (1 personal, 0 open-source)</title></rect>
+  <rect class="day" data-date="2026-11-24" x="880" y="80" width="14" height="14" rx="2" style="fill:var(--empty);"><title>2026-11-24: 0 contributions (0 personal, 0 open-source)</title></rect>
   <rect class="snake" width="14" height="14" rx="4" style="transform:translate(32px,112px);opacity:0.64;animation:snake4 34.24s linear infinite"/>
   <rect class="snake" width="14" height="14" rx="4" style="transform:translate(32px,96px);opacity:0.73;animation:snake3 34.24s linear infinite"/>
   <rect class="snake" width="14" height="14" rx="4" style="transform:translate(32px,80px);opacity:0.8200000000000001;animation:snake2 34.24s linear infinite"/>
   <rect class="snake" width="14" height="14" rx="4" style="transform:translate(32px,64px);opacity:0.91;animation:snake1 34.24s linear infinite"/>
   <rect class="snake" width="14" height="14" rx="4" style="transform:translate(32px,48px);opacity:1;animation:snake0 34.24s linear infinite"/>
-  <text x="48" y="194" font-size="11">Combined public activity · 2025-11-24 – 2026-11-23 UTC · refreshes every 12 hours</text>
+  <text x="48" y="194" font-size="11">Combined public activity · 2025-11-25 – 2026-11-24 UTC · refreshes every 12 hours</text>
 </svg>
